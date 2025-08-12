@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRM Político</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>CRM para Políticos</h1>
+  </header>
+
+  <main>
+    <section id="formulario">
+      <h2>Cadastro de Eleitor</h2>
+      <form id="cadastroForm">
+        <input type="text" placeholder="Nome completo" required />
+        <input type="text" placeholder="CPF" required />
+        <input type="tel" placeholder="Telefone" required />
+        <input type="email" placeholder="E-mail" />
+        <input type="text" placeholder="Endereço completo" />
+        <button type="submit">Cadastrar</button>
+      </form>
+    </section>
+
+    <section id="tabela">
+      <h2>Lista de Eleitores</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>CPF</th>
+            <th>Telefone</th>
+            <th>E-mail</th>
+            <th>Endereço</th>
+          </tr>
+        </thead>
+        <tbody id="listaEleitores">
+          <!-- Dados inseridos aparecerão aqui -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
