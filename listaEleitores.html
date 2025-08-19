@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lista de Eleitores</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <section id="tabela">
+    <h2>Lista de Eleitores</h2>
+
+    <!-- Tabela para desktop -->
+    <table id="tabelaDesktop">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>CPF</th>
+          <th>Telefone</th>
+          <th>E-mail</th>
+          <th>CEP</th>
+          <th>Cidade</th>
+          <th>Estado</th>
+          <th>Rua</th>
+          <th>Bairro</th>
+          <th>Número</th>
+        </tr>
+      </thead>
+      <tbody id="listaEleitores"></tbody>
+    </table>
+
+    <!-- Cards para mobile -->
+    <div id="cardsContainer"></div>
+
+    <button id="delete">Apagar</button>
+  </section>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
+

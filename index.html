@@ -3,46 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CRM Político</title>
+  <title>CRM Político - Cadastro</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header>
-    <h1>CRM para Políticos</h1>
-  </header>
-
+  <header><h1>Cadastro de Eleitor</h1></header>
   <main>
     <section id="formulario">
-      <h2>Cadastro de Eleitor</h2>
       <form id="cadastroForm">
-        <input type="text" placeholder="Nome completo" required />
-        <input type="text" placeholder="CPF" required />
-        <input type="tel" placeholder="Telefone" required />
-        <input type="email" placeholder="E-mail" />
-        <input type="text" placeholder="Endereço completo" />
+        <input id="nome" type="text" placeholder="Nome completo" required />
+        <input id="cpf" type="text" maxlength="11" placeholder="CPF" required />
+        <input id="telefone" type="tel" placeholder="Telefone" required />
+        <input id="email" type="email" placeholder="E-mail" />
+        <input id="cep" type="text" maxlength="9" placeholder="CEP" required />
+        <input id="cidade" type="text" placeholder="Cidade" required />
+        <input id="estado" type="text" placeholder="Estado" required />
+        <input id="rua" type="text" placeholder="Rua" required />
+        <input id="bairro" type="text" placeholder="Bairro" required />
+        <input id="numero" type="number" placeholder="Número" required />
         <button type="submit">Cadastrar</button>
       </form>
-    </section>
-
-    <section id="tabela">
-      <h2>Lista de Eleitores</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Nome</th>
-            <th>CPF</th>
-            <th>Telefone</th>
-            <th>E-mail</th>
-            <th>Endereço</th>
-          </tr>
-        </thead>
-        <tbody id="listaEleitores">
-          <!-- Dados inseridos aparecerão aqui -->
-        </tbody>
-      </table>
+      <a href="listaEleitores.html"><button type="button">Ver Lista</button></a>
     </section>
   </main>
-
   <script src="js/script.js"></script>
 </body>
 </html>
