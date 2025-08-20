@@ -28,6 +28,7 @@ const criarLinhaTabela = (dados) => {
 
 // Buscar CEP
 const buscarCEP = () => {
+ 
   const cep = document.getElementById("cep").value.replace(/\D/g, "");
   if (cep.length === 8) {
     fetch(`https://viacep.com.br/ws/${cep}/json/`)
@@ -120,6 +121,7 @@ const paginaCadastro = () => {
   });
 
   cepInput.addEventListener("blur", buscarCEP);
+  cepInput.stopPropagation()
 };
 
 // Página de lista
