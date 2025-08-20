@@ -121,7 +121,7 @@ const paginaCadastro = () => {
   });
 
   cepInput.addEventListener("blur", buscarCEP);
-  cepInput.stopPropagation()
+ 
 };
 
 // Página de lista
