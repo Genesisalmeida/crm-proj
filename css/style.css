@@ -10,8 +10,7 @@ header {
   color: white;
   padding: 1rem;
   text-align: center;
-}
-
+} 
 main {
   padding: 2rem;
 }
@@ -47,9 +46,10 @@ section {
   align-items: center;
 }
 
-section > button {
+section > #BtnDelete {
   width: 100px;
-  margin-top: 30px;
+  margin-top: 3px;
+  padding: 5px;
   background-color: #4b535c;
   border-radius: 5px;
   color: #fff;
@@ -59,7 +59,7 @@ section > button {
 
 #tabela {
   width: 100%;
-  margin-top: 2rem;
+  margin-top: 0.2rem;
 }
 
 table {
@@ -93,7 +93,9 @@ tr:nth-child(even) {
   table, thead, tbody, th, td, tr {
     display: block;
   }
-
+  header > h1{
+    font-size: 15px;
+  }
   thead {
     display: none;
   }
@@ -126,11 +128,11 @@ tr:nth-child(even) {
 #cardsContainer {
   display: none;
   width: 100%;
-  padding: 1rem;
+
 }
 
 .card {
-  border: 1px solid #ccc;
+  border: 2px solid #6e6c6c;
   border-radius: 8px;
   padding: 1rem;
   margin-bottom: 1rem;
