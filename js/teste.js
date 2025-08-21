@@ -39,3 +39,7 @@ const gerarEleitor = (i) => {
     alert(`${quantidade} eleitores cadastrados e exibidos na tabela!`);
   };
   automatizarCadastro(20);
+  // git add .
+  // git commit -m "Mensagem do commit"
+  // git push
+  
