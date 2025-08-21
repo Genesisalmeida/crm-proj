@@ -7,6 +7,7 @@ const headers = [
 const btnDelete = document.querySelector("#delete");
 if (btnDelete) {
   btnDelete.addEventListener("click", () => {
+    localStorage.clear()
     localStorage.removeItem("eleitores");
     location.reload();
   });
@@ -139,5 +140,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (pagina.includes("listaEleitores.html")) {
     paginaLista();
+    isMobile()
+    search()
   }
 });
+
+// input de pesquisa
+function isMobile() {
+  return window.innerWidth <= 768;
+}
+
+const search = ()=>{
+      let timer;
+      const searchInput = document.getElementById('search');
+      searchInput.addEventListener('input', () => {
+          clearTimeout(timer);
+          const search = searchInput.value.toLowerCase();
+          timer = setTimeout(() => {
+            if(isMobile()){
+              const cards =document.querySelectorAll('#cardsContainer .card');
+              cards.forEach(card=>{
+                const target = card.textContent.toLowerCase();
+                card.style.display = target.includes(search)?'':'none';
+              });
+            }else{
+                  const linhas = document.querySelectorAll('#listaEleitores tr');
+              linhas.forEach(linha => {
+                  const target = linha.textContent.toLowerCase();
+                  linha.style.display = target.includes(search) ? '' : 'none';
+              });
+          }
+        },300);
+      });
+}
+
+

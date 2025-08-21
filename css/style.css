@@ -16,7 +16,25 @@ header {
 } 
 
 #listaHeader {
+  display: flex;
+  height: 8vh;
+  align-items: center;
+  justify-content: center;
+  position: relative;
   width: 100%;
+}
+#listaHeader h2 {
+  margin: 0;
+
+}
+
+#listaHeader #search {
+  margin: 0;
+  padding: 5px;
+  position: absolute;
+  border-radius: 7px;
+  right: 40px;
+  
 }
 
 main {
@@ -141,6 +159,24 @@ tr:nth-child(even) {
     font-weight: bold;
     white-space: nowrap;
   }
+  #listaHeader{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  #listaHeader h2 {
+    font-size: 25px;
+    margin-bottom: 20px;
+    
+  }
+  #listaHeader #search{
+    width: 100px;
+    padding: 2px;
+    text-align: center;
+    position: static;
+    }
+  
 }
 
 /* === Estilos para os cards no mobile === */
@@ -176,4 +212,5 @@ tr:nth-child(even) {
   #cardsContainer {
     display: block;
   }
+
 }

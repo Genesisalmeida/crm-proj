@@ -1,6 +1,10 @@
 // Gera os dados do eleitor
-const gerarEleitor = (i) => ({
-    nome: `Pessoa ${i}`,
+const letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+const gerarEleitor = (i) => {
+  const primeiraLetra = letras[Math.floor(Math.random() * letras.length)];
+  return {
+    nome: `${primeiraLetra}essoa ${i}`, // substitui a primeira letra por aleatória
     cpf: `000.000.000-${String(i).padStart(2,'0')}`,
     telefone: `1190000${String(i).padStart(4,'0')}`,
     email: `pessoa${i}@teste.com`,
@@ -10,8 +14,8 @@ const gerarEleitor = (i) => ({
     rua: `Rua ${i}`,
     bairro: `Bairro ${i}`,
     numero: `${i}`,
-  });
-  
+  };
+};
   // Função para popular localStorage e atualizar tabela/cards
   const automatizarCadastro = (quantidade = 1000) => {
     const lista = JSON.parse(localStorage.getItem("eleitores")) || [];
@@ -34,4 +38,4 @@ const gerarEleitor = (i) => ({
   
     alert(`${quantidade} eleitores cadastrados e exibidos na tabela!`);
   };
-  automatizarCadastro(1000);
+  automatizarCadastro(20);
