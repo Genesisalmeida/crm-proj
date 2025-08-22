@@ -4,10 +4,9 @@ const headers = [
 ];
 
 // Apagar dados
-const btnDelete = document.querySelector("#delete");
+const btnDelete = document.querySelector("#BtnDelete");
 if (btnDelete) {
   btnDelete.addEventListener("click", () => {
-    localStorage.clear()
     localStorage.removeItem("eleitores");
     location.reload();
   });
@@ -23,6 +22,23 @@ const criarLinhaTabela = (dados) => {
     td.setAttribute("data-label", campo.charAt(0).toUpperCase() + campo.slice(1));
     novaLinha.appendChild(td);
   });
+    // Cria TD da lixeira
+    const tdLixeira = document.createElement("td");
+    tdLixeira.setAttribute('class','tdLixeira');
+ 
+    const icone = document.createElement("span"); // ou <img> se quiser imagem
+    icone.textContent = "🗑️"; // emoji de lixeira
+    icone.style.cursor = "pointer";
+  
+    // Evento para remover a linha
+    icone.addEventListener("click", () => {
+      novaLinha.remove();
+      localStorage.removeItem("eleitores");
+      location.reload();
+    });
+  
+    tdLixeira.appendChild(icone);
+    novaLinha.appendChild(tdLixeira);
 
   return novaLinha;
 };
@@ -79,7 +95,7 @@ const carregarDadosLocal = () => {
   lista.forEach(dados => {
     // Tabela (desktop)
     listaEleitores.appendChild(criarLinhaTabela(dados));
-  
+       
     // Cards (mobile)
     const card = document.createElement("div");
     card.className = "card";
@@ -99,16 +115,13 @@ const carregarDadosLocal = () => {
 const paginaCadastro = () => {
   const cadastroForm = document.getElementById("cadastroForm");
   const cepInput = document.getElementById("cep");
-
   cadastroForm.addEventListener("submit", function (e) {
     e.preventDefault();
-
     const inputs = Array.from(e.target.querySelectorAll("input"));
     if (!validarInputs(inputs)) {
       alert("Por favor, preencha todos os campos obrigatórios.");
       return;
     }
-
     const dados = {};
     inputs.forEach(input => {
       if (input.id) {

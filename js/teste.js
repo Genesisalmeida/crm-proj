@@ -43,3 +43,11 @@ const gerarEleitor = (i) => {
   // git commit -m "Mensagem do commit"
   // git push
   
+
+
+
+//   Regra simples para não se perder:
+
+// Modificar DOM ou rodar funções que não devolvem valor útil → forEach
+
+// Transformar dados e gerar um novo array → map

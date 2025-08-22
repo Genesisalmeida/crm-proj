@@ -74,17 +74,6 @@ section {
   align-items: center;
 }
 
-section > #BtnDelete {
-  width: 100px;
-  margin-top: 3px;
-  padding: 5px;
-  background-color: #4b535c;
-  border-radius: 5px;
-  color: #fff;
-  cursor: pointer;
-  border: none;
-}
-
 /* === Tabela Desktop === */
 #tabela {
   width: 100%;
@@ -113,11 +102,21 @@ th {
   background-color: #4b535c;
   color: #eee;
 }
+#thApagar{
+  background-color: #f10000;
+  color: black;
+  
+}
 
 tr:nth-child(odd) {
   background-color: #f2f2f2;
 }
+.tdLixeira{
+  background-color: #f10000;
+  font-size:25px;
+  text-align: center;
 
+}
 tr:nth-child(even) {
   background-color: #ffffff;
 }
@@ -176,9 +175,19 @@ tr:nth-child(even) {
     text-align: center;
     position: static;
     }
-  
+   
 }
-
+section > #BtnDelete {
+  width: 100px;
+  display: none;
+  margin-top: 3px;
+  padding: 5px;
+  background-color: #4b535c;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+} 
 /* === Estilos para os cards no mobile === */
 #cardsContainer {
   display: none;
@@ -212,5 +221,15 @@ tr:nth-child(even) {
   #cardsContainer {
     display: block;
   }
-
+  section > #BtnDelete {
+    display: block;
+    width: 100px;
+    margin-top: 3px;
+    padding: 5px;
+    background-color: #4b535c;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+  }
 }
