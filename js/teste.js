@@ -46,8 +46,15 @@ const gerarEleitor = (i) => {
 
 
 
-//   Regra simples para não se perder:
+//📊 forEach vs map no DOM
+// Objetivo	Melhor escolha	Exemplo	Resultado
+// Alterar algo nos elementos (ex: cor, texto, classe)	forEach	js const itens = document.querySelectorAll(".item"); itens.forEach(el => { el.style.color = "red"; });	Todos os .item ficam vermelhos. Nenhum array novo é criado.
+// Executar uma ação sem precisar de retorno	forEach	js const botoes = document.querySelectorAll("button"); botoes.forEach(btn => btn.addEventListener("click", () => alert("Clicado!")));	Cada botão recebe um evento. Nada é retornado.
+// Extrair dados dos elementos para um array novo	map	js const inputs = document.querySelectorAll(".campo"); const valores = Array.from(inputs).map(input => input.value);	Novo array: ["João", "joao@email.com", "12345"].
+// Transformar elementos em outra forma de dado	map	js const itens = document.querySelectorAll(".item"); const textos = Array.from(itens).map(el => el.textContent.toUpperCase());	Novo array: ["PRODUTO A", "PRODUTO B", "PRODUTO C"].
 
-// Modificar DOM ou rodar funções que não devolvem valor útil → forEach
+// 👉 Regrinha final pra decorar:
 
-// Transformar dados e gerar um novo array → map
+// forEach → alterar (DOM, eventos, classes, estilos).
+
+// map → transformar (elementos em dados novos, ou gerar outro array).

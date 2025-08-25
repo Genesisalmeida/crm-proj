@@ -186,5 +186,6 @@ const search = ()=>{
         },300);
       });
 }
-
+  // Atualiza o ano automaticamente
+  document.getElementById("ano").textContent = new Date().getFullYear();
 

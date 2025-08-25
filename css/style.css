@@ -1,14 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
   overflow-x: hidden;
+  
 
 }
 
 header {
   background-color: #2c3e50;
+  height: 10vh;
   width: 100vw;
   color: white;
   padding: 1rem;
@@ -38,7 +46,8 @@ header {
 }
 
 main {
-  padding: 2rem;
+  flex: 1 0 auto; /* ocupa espaço restante */
+  padding: 35px;
 }
 
 #cadastroForm {
@@ -73,6 +82,17 @@ section {
   flex-direction: column;
   align-items: center;
 }
+section > #BtnDelete {
+  width: 100px;
+  display: none;
+  margin-top: 3px;
+  padding: 5px;
+  background-color: #4b535c;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+} 
 
 /* === Tabela Desktop === */
 #tabela {
@@ -91,7 +111,6 @@ th, td {
   border: 1px solid #ccc;
   padding: 0.75rem;
   text-align: left;
-
   /* alterações para não estourar */
   white-space: normal;        /* permite quebra de linha */
   word-wrap: break-word;
@@ -120,6 +139,75 @@ tr:nth-child(odd) {
 tr:nth-child(even) {
   background-color: #ffffff;
 }
+
+/* === Estilos para os cards no mobile === */
+#cardsContainer {
+  display: none;
+  width: 100%;
+}
+
+.card {
+  border: 2px solid #6e6c6c;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: white;
+  box-shadow: 0 2px 4px #0000000d;
+}
+
+.card div {
+  margin-bottom: 0.5rem;
+}
+
+.card span {
+  font-weight: bold;
+  color: #333;
+}
+
+/* area footer */
+footer {
+  background:  #2c3e50;
+  color: #eee;
+padding: 50px;
+
+  margin-top: 40px;
+  flex-shrink: 0;
+}
+.footer-container {
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  flex-wrap: wrap; /* permite quebrar em telas pequenas */
+  gap: 20px;
+}
+
+.footer-info h3 {
+  margin: 0;
+  color: #ff9800;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #eee;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #ff9800;
+}
+
+.footer-social a img {
+  width: 24px;
+  margin: 0 5px;
+  filter: invert(80%);
+  transition: transform 0.3s;
+}
+
+.footer-social a img:hover {
+  transform: scale(1.2);
+}
+
 
 /* Responsividade da tabela em telas pequenas */
 @media (max-width: 768px) {
@@ -175,61 +263,35 @@ tr:nth-child(even) {
     text-align: center;
     position: static;
     }
-   
-}
-section > #BtnDelete {
-  width: 100px;
-  display: none;
-  margin-top: 3px;
-  padding: 5px;
-  background-color: #4b535c;
-  border-radius: 5px;
-  color: #fff;
-  cursor: pointer;
-  border: none;
-} 
-/* === Estilos para os cards no mobile === */
-#cardsContainer {
-  display: none;
-  width: 100%;
-}
-
-.card {
-  border: 2px solid #6e6c6c;
-  border-radius: 8px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  background-color: white;
-  box-shadow: 0 2px 4px #0000000d;
-}
-
-.card div {
-  margin-bottom: 0.5rem;
-}
-
-.card span {
-  font-weight: bold;
-  color: #333;
-}
-
-/* Quando a tela for menor, esconda a tabela e mostre os cards */
-@media (max-width: 768px) {
-  table {
-    display: none;
-  }
-
-  #cardsContainer {
-    display: block;
-  }
-  section > #BtnDelete {
-    display: block;
-    width: 100px;
-    margin-top: 3px;
-    padding: 5px;
-    background-color: #4b535c;
-    border-radius: 5px;
-    color: #fff;
-    cursor: pointer;
-    border: none;
-  }
+    table {
+      display: none;
+    }
+  
+    #cardsContainer {
+      display: block;
+    }
+    section > #BtnDelete {
+      display: block;
+      width: 100px;
+      margin-top: 3px;
+      padding: 5px;
+      background-color: #4b535c;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+      border: none;
+    }
+    .footer-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .footer-links {
+      margin: 10px 0;
+    }
+  
+    .footer-social a img {
+      width: 32px; /* ícones um pouco maiores para mobile */
+      margin: 5px;
+    }
 }
