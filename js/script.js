@@ -3,6 +3,15 @@ const headers = [
   "cidade", "estado", "rua", "bairro", "numero"
 ];
 
+//abrir e fechar menu
+const menuToggle = document.getElementById('mobile-menu');
+const navList = document.querySelector('.nav-list');
+
+menuToggle.addEventListener('click', () => {
+  navList.classList.toggle('active');
+});
+
+
 // Apagar dados
 const btnDelete = document.querySelector("#BtnDelete");
 if (btnDelete) {

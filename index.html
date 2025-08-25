@@ -7,7 +7,21 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header><h1>Página de Cadastro</h1></header>
+  <header>
+    <h1>Página de Cadastro</h1>
+    <nav class="nav-bar">
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <ul class="nav-list">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="listaEleitores.html">Lista</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
   <main>
     <section id="formulario">
       <form id="cadastroForm">
@@ -21,17 +35,15 @@
         <input id="rua" type="text" placeholder="Rua" required />
         <input id="bairro" type="text" placeholder="Bairro" required />
         <input id="numero" type="number" placeholder="Número" required />
-        <button type="submit">Cadastrar</button>
+        <button type="submit" class="btn">Cadastrar</button>
       </form>
-      <a href="listaEleitores.html"><button id="listaEle" type="button">Ver Lista</button></a>
     </section>
   </main>
   <footer>
     <div class="footer-container">
       <div class="footer-links">
-        <a href="index.html">Início</a>
-        <a href="listaEleitores.html">Lista</a>
-        <a href="#">Contato</a>
+        <a href="index.html"><button >Inicio</button></a>
+        <a href="listaEleitores.html"><button >Lista</button></a>
       </div>
       <div class="footer-social">
         <a href="#"><img src="assets/img/facebook.png" alt="Facebook"></a>
