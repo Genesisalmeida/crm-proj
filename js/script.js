@@ -3,13 +3,21 @@ const headers = [
   "cidade", "estado", "rua", "bairro", "numero"
 ];
 
-//abrir e fechar menu
+// Toggle menu
 const menuToggle = document.getElementById('mobile-menu');
 const navList = document.querySelector('.nav-list');
 
-menuToggle.addEventListener('click', () => {
-  navList.classList.toggle('active');
-});
+if (menuToggle && navList) {  // verifica se existem
+  menuToggle.addEventListener('click', () => {
+    navList.classList.toggle('active');
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      navList.classList.remove('active');
+    }
+  });
+}
 
 
 // Apagar dados
@@ -196,5 +204,6 @@ const search = ()=>{
       });
 }
   // Atualiza o ano automaticamente
-  document.getElementById("ano").textContent = new Date().getFullYear();
 
+ 
+ document.getElementById("ano").textContent = new Date().getFullYear();
